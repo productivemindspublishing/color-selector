@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1C2C49</color>
+    <color name="colorPrimaryDark">#132039</color>
+    <color name="colorAccent">#0171CA</color>
+    <color name="colorTransparent">#00000000</color>
+
+    <color name="colorMainWindowBackground">#EDEFF1</color>
+    <color name="colorAppThemeBaseColor">#054C87</color>
+
+    <color name="bg_window_primary">#041E32</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffffff</color>
+
+    <color name="colorBlue">#0666B3</color>
+    <color name="colorBlueDark">#07599C</color>
+
+    <color name="colorGreen">#09BD75</color>
+    <color name="colorGreenDark">#03A665</color>
+    <color name="colorGreenDarker">#037E4C</color>
+
+    <color name="colorRed">#D50C0C</color>
+    <color name="colorRedDark">#B30E0E</color>
+    <color name="colorRedDarker">#8E0D0D</color>
+
+    <color name="colorLightGrey">#D9DFE4</color>
+
+</resources>

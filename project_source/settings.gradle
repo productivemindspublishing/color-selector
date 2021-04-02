@@ -1,0 +1,3 @@
+include ':color_selector'
+include ':all_project_demos'
+rootProject.name = "OS Projects Demos"

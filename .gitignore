@@ -4,6 +4,9 @@
 *.ap_
 *.aab
 
+.DS_Store
+project_source/all_project_demos/
+
 # Files for the ART/Dalvik VM
 *.dex
 
