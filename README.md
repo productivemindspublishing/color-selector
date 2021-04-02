@@ -38,7 +38,7 @@ Above, the four parameters are
 
 
 Applying the color is easy, the plugin provides 2 methods.
-Method 1, handle the triggered interface, as demonstrated below...
+### Method 1 - handle the triggered interface, as demonstrated below...
 ```java
 colorSliderUi.setOnColorSelectedListener(new ColorSliderUi.OnColorSelectedListener() {
     @Override
@@ -54,13 +54,25 @@ colorSliderUi.setOnColorSelectedListener(new ColorSliderUi.OnColorSelectedListen
     public void getOnColorAlphaSelectedListener(int color) {
 
     }
+    @Override
+     public void getOnColorIntSelectedBtnClickedListener(int color) {
+        sample_textview.setTextColor(ColorStateList.valueOf(color));
+    }
 });
 ```
 
+Above, the four interfaces return values as follows: 
+- The hex code, 
+- The int equivalent of the hex code, 
+- The alpha value for the 'A' slider, and 
+- The int equivalent of the hex code. 
 
-Above, the three interfaces return the hex value of the selected colour, the int equivalent, and thirdly, the alpha value. 
+Note that both second and fourth interfaces return the int value. The difference is that, the second interface sends a response with each slider change while the fourth interface only returns value, when (or if) the user clicks the check button.
 
-If not using the interfaces, corresponding key/value pairs are equally set in the shared preference, as shown below...
+As the fourth interface only send a response on final click, it gives the option to configure regular updates or one final update only.
+
+### Method 2 - retrieve saved values in the shared preference
+If not using the interfaces, the plugin provides corresponding key/value pairs in the shared preference, as shown below...
 ```java
 UserPreferencesManager.setStringPrefValue(context,
         ProjectConstants.C_S_HEX_LATEST, hexCode);
