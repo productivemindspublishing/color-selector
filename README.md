@@ -37,8 +37,9 @@ Above, the four parameters are
 4. The title of the popup
 
 
+### Apply the Colors to components
 Applying the color is easy, the plugin provides 2 methods.
-### Method 1 - handle the triggered interface, as demonstrated below...
+** Method 1 - handle the triggered interface, as demonstrated below...** 
 ```java
 colorSliderUi.setOnColorSelectedListener(new ColorSliderUi.OnColorSelectedListener() {
     @Override
@@ -71,7 +72,7 @@ Note that both second and fourth interfaces return the int value. The difference
 
 As the fourth interface only send a response on final click, it gives the option to configure regular updates or one final update only.
 
-### Method 2 - retrieve saved values in the shared preference
+** Method 2 - retrieve saved values in the shared preference** 
 If not using the interfaces, the plugin provides corresponding key/value pairs in the shared preference, as shown below...
 ```java
 UserPreferencesManager.setStringPrefValue(context,
