@@ -285,6 +285,7 @@ public class ColorSliderUi {
                     onColorSelectedListener.getOnColorAlphaSelectedListener(a);
                     onColorSelectedListener.getOnColorStringSelectedListener(hexCode);
                     onColorSelectedListener.getOnColorIntSelectedListener(ColorSelector.COLOR_ENCODED);
+                    onColorSelectedListener.getOnColorIntSelectedBtnClickedListener(ColorSelector.COLOR_ENCODED);
                 }
                 UserPreferencesManager.setIntPrefValue(context,
                         ProjectConstants.C_S_ARGB_COLOR_LATEST, ColorSelector.COLOR_ENCODED);
@@ -345,6 +346,7 @@ public class ColorSliderUi {
         public void getOnColorStringSelectedListener(String color);
         public void getOnColorIntSelectedListener(int color);
         public void getOnColorAlphaSelectedListener(int color);
+        public void getOnColorIntSelectedBtnClickedListener(int color);
     }
     public void setOnColorSelectedListener(OnColorSelectedListener onColorSelectedListener) {
         this.onColorSelectedListener = onColorSelectedListener;
