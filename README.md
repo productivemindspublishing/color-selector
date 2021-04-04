@@ -3,8 +3,8 @@
 ## A practical colour selector library for android, by ProductiveMinds
 
 ### Objective
-The objective of the library is provide a plugable and reusable 'colour selection' library (module) for Android developers who require a custom color selector for their Android projects. 
-While developing an Android project, the developer of this library could not find a suitable library and wrote this one ground up. The library source code is made available under [Apache 2 LICENSE](https://www.apache.org/licenses/LICENSE-2.0) - so you are welcome to implement as you please.
+The objective of this project is to provide a plugable and reusable 'colour selection' library (module) for anyone who requires a custom color selector for their Android projects. 
+While developing an Android project, the developer of this library did not find a suitable library. Therefore, started this project from ground up. The library source is provided under [Apache 2 LICENSE](https://www.apache.org/licenses/LICENSE-2.0) - so you are welcome to explore and implement as you please.
 
 
 ### Content and Minimum Requirement
@@ -42,12 +42,12 @@ Once installed, in your project, instantiate and call the 'showDialogColorSelect
 ColorSliderUi colorSliderUi = new ColorSliderUi();
 colorSliderUi.showDialogColorSelector(MyActivity.this, true, true, "Select Text colour");
 ```
-
-Above, the four parameters are
+Above, the five parameters are
 1. The activity class calling the library.
-2. If true, the hex code label will be visible in the popup.
-3. If true, user can close the popup by clicking anywhere on the screen. If false, the popup can only be closed by clicking appropriate buttons.
-4. The title of the popup
+2. The title of the popup
+3. If true, the hex code label will be visible in the popup.
+4. If true, user can close the popup by clicking anywhere on the screen. If false, the popup can only be closed by clicking appropriate buttons.
+5. If true, show slider for alpha channel, otherwise only show 3 sliders (for rgb channels).
 
 
 ### Applying a selected colour - 2 methods available
