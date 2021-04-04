@@ -20,9 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:orientation="vertical"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:background="@color/bg_window_primary"
             >
             <include layout="@layout/dialog_header"/>

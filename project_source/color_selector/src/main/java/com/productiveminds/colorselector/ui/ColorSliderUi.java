@@ -31,7 +31,8 @@ public class ColorSliderUi {
     private int g = ProjectConstants.C_S_DEFAULT_VALUE_G;
     private int b = ProjectConstants.C_S_DEFAULT_VALUE_B;
 
-    public void showDialogColorSelector(Activity activity, boolean showHexCode, boolean isCancelable, String heading) {
+    public void showDialogColorSelector(Activity activity, String dialogTitle,
+                                        boolean showHexCode, boolean isCancelable, boolean showOpacity) {
         Context context = activity.getApplicationContext();
         // init dialog
         final Dialog dialog = new Dialog(activity);
@@ -45,8 +46,8 @@ public class ColorSliderUi {
         }
 
         TextView dialog_title = dialog.findViewById(R.id.dialog_title);
-        if ( !TextUtils.isEmpty(heading) ) {
-            dialog_title.setText(heading);
+        if ( !TextUtils.isEmpty(dialogTitle) ) {
+            dialog_title.setText(dialogTitle);
         } else {
             dialog_title.setText(activity.getResources().getString(R.string.color_slider_dialog_title));
         }
@@ -61,18 +62,19 @@ public class ColorSliderUi {
             }
         });
 
-        initContent(activity, showHexCode, dialog);
+        initContent(activity, dialog, showHexCode, showOpacity);
 
         dialog.show();
     }
 
-    public void initContent(Activity activity, boolean showHexCode, Dialog dialog) {
+    public void initContent(Activity activity, Dialog dialog,
+                            boolean showHexCode, boolean showOpacity) {
         Context context = activity.getApplicationContext();
         // init components
         AppCompatSeekBar color_a, color_r, color_g, color_b;
         TextView indicator_a, indicator_r, indicator_g, indicator_b, edt_indicator_hex;
         ImageView indicator_icon, copy_hex_color_code_icon, hex_coloy_apply_icon;
-        LinearLayout copy_hex_color_code_container;
+        LinearLayout color_a_container, copy_hex_color_code_container;
 
         color_a = dialog.findViewById(R.id.color_a);
         color_r = dialog.findViewById(R.id.color_r);
@@ -87,6 +89,12 @@ public class ColorSliderUi {
         indicator_icon = dialog.findViewById(R.id.indicator_icon);
 
         edt_indicator_hex = dialog.findViewById(R.id.edt_indicator_hex);
+
+        color_a_container = dialog.findViewById(R.id.color_a_container);
+        if ( !showOpacity ) {
+            a = ProjectConstants.C_S_DEFAULT_VALUE_A;
+            color_a_container.setVisibility(View.GONE);
+        }
 
         copy_hex_color_code_container = dialog.findViewById(R.id.copy_hex_color_code_container);
         if ( showHexCode ) {
