@@ -91,10 +91,6 @@ public class ColorSliderUi {
         edt_indicator_hex = dialog.findViewById(R.id.edt_indicator_hex);
 
         color_a_container = dialog.findViewById(R.id.color_a_container);
-        if ( !showOpacity ) {
-            a = ProjectConstants.C_S_DEFAULT_VALUE_A;
-            color_a_container.setVisibility(View.GONE);
-        }
 
         copy_hex_color_code_container = dialog.findViewById(R.id.copy_hex_color_code_container);
         if ( showHexCode ) {
@@ -117,6 +113,24 @@ public class ColorSliderUi {
                 ProjectConstants.C_S_CODE_GREEN, g);
         b = UserPreferencesManager.getIntPrefValue(context,
                 ProjectConstants.C_S_CODE_BLUE, b);
+
+        if ( !showOpacity ) {
+            // set the current color to reflect the change
+            a = ProjectConstants.C_S_DEFAULT_VALUE_A;
+
+            UserPreferencesManager.setIntPrefValue(context,
+                    ProjectConstants.C_S_CODE_ALPHA, a);
+
+            String hexCode = setColorGetHex(a, r, g, b);
+            updateIndicators(hexCode, indicator_icon, edt_indicator_hex);
+
+            UserPreferencesManager.setStringPrefValue(context,
+                    ProjectConstants.C_S_HEX_LATEST, hexCode);
+            UserPreferencesManager.setIntPrefValue(context,
+                    ProjectConstants.C_S_ARGB_COLOR_LATEST, ColorSelector.COLOR_ENCODED);
+
+            color_a_container.setVisibility(View.GONE);
+        }
 
         String latestHex = UserPreferencesManager.getStringPrefValue(context,
                 ProjectConstants.C_S_HEX_LATEST, setColorGetHex(a, r,g,b));
